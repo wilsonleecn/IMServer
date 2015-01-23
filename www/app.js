@@ -54,9 +54,14 @@ app.get('/partials/:name', routes.partials);
 app.get('/api/name', api.name);
 
 app.get('/api/whoru', function (req, res) {
-    res.json({
-        data: 'Hello, I am your IM server.'
-    });
+    console.log('wait 5 sec.');
+    setTimeout(
+        function(){
+            res.json({
+                data: 'Hello, I am your IM server.'
+            });
+        }, 5000
+    )
 });
 
 // redirect all others to the index (HTML5 history)
